@@ -27,9 +27,22 @@ angular
         controller: 'PostsCtrl',
         controllerAs: 'posts'
       })
+      .when('/users', {
+        templateUrl: 'scripts/users/users.html',
+        controller: 'UsersCtrl',
+        controllerAs: 'Users',
+        resolve: {
+          UsersData: function (JsonPlaceholder) {
+            return JsonPlaceholder.getusers();
+          }
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
 
       $locationProvider.html5Mode(true);
+  })
+  .constant('URLS', {
+    'JSON_URL': 'http://jsonplaceholder.typicode.com/'
   });

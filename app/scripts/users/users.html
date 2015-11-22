@@ -1,0 +1,41 @@
+<i class="fa fa-spin fa-refresh fa-5x" id="loader"></i>
+<div class="container">
+  <h2>Users</h2>
+  <h4 ng-if="Users.selectedUsers.length > 0">Selected Users Count: {{Users.selectedUsers.length}}</h4>
+  <hr>
+  <div class="row" id="userList">
+    <table class="table-responsive">
+    <thead>
+      <tr>
+        <th class="col-xs-1"></th>
+        <th class="col-xs-4">Full Name</th>
+        <th class="col-xs-2">Username</th>
+        <th class="col-xs-2">Phone</th>
+        <th class="col-xs-2">Location</th>
+        <th class="col-xs-1"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in Users.users" ng-click="showDetail(user.id)" ng-class-odd="'alt'">
+        <td class="col-xs-1">{{user.id}}</td>
+        <td class="col-xs-4 cap">{{user.name}}</td>
+        <td class="col-xs-2 strong">{{user.username}}</td>
+        <td class="col-xs-2">{{user.phone}}</td>
+        <td class="col-xs-2">{{user.address.city}}</td>
+        <td class="col-xs-1"><input type="checkbox" ng-model="user.checked" class="fa fa-plus fa-3x" ng-attr-id="{{user.username}}" ng-change="Users.addToSelection(user)"></td>
+      </tr>
+
+    </tbody>
+    </table>
+
+  </div><!--/row-->
+  <!-- http://www.bootply.com/95NuZD8CRP -->
+  <div class="row">
+
+
+  <hr>
+
+  </div>
+
+
+</div><!--/container-->
