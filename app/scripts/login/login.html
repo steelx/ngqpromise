@@ -1,0 +1,16 @@
+<h1 ng-bind="LoginCtrl.title"></h1>
+
+<form name="loginForm" class="form col-md-12 center-block" ng-class="{'has-error': LoginCtrl.error}">
+  <div class="form-group">
+    <input class="form-control input-lg" placeholder="Username" type="text" ng-model="loginForm.username" >
+  </div>
+  <div class="form-group">
+    <input class="form-control input-lg" placeholder="Password" type="password" ng-model="loginForm.password" >
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary btn-lg btn-block" ng-click="LoginCtrl.login(loginForm.username, loginForm.password)">Sign In</button>
+  </div>
+  <div class="error" ng-show="LoginCtrl.error">
+    Please enter correct username or password!
+  </div>
+</form>

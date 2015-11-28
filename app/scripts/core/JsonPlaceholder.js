@@ -1,5 +1,4 @@
 //http://jsonplaceholder.typicode.com/users/
-
 'use strict';
 
 /**
